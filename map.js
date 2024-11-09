@@ -1,4 +1,8 @@
 //Where I got the map: https://cartographyvectors.com/map/1061-united-kingdom-detailed-boundary
+//Initial D3 code was taken from what was covered in the lectures.
+//Chat GPT was used for some insight into how a map could be projected onto the svg and how to map the points onto them.
+//Prompt used: How could I plot coordinates on a map of the uk using d3.
+
 var svg, path, projection;
 
 function d3Draw(dataset){
@@ -11,6 +15,8 @@ function d3Draw(dataset){
          .attr("height", Height);
    }
 
+//-----------------------------------------------------------------------------
+//Built using what was learned from the above mentioned chat GPT prompt
    projection = d3.geo.albers()
       .center([0, 55.4])      
       .rotate([4.4, 0])        
@@ -32,6 +38,8 @@ function d3Draw(dataset){
          .attr("fill", "#cccccc")
          .attr("stroke", "#333");
    });
+
+//--------------------------------------------------------------------------------
 
    const circlesGroup = svg.append("g").attr("class", "circles");
 
